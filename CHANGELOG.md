@@ -1,5 +1,11 @@
 # DjangoNestedValues Changelog
 
+## v0.2.2
+
+2016-03-20
+
+-\_\_init\_\_.py
+
 ## v0.2.1
 
 2016-03-19
