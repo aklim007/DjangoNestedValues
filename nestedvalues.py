@@ -4,7 +4,7 @@ from itertools import count
 
 from django.db.models.query import QuerySet, BaseIterable
 
-VERSION = (0, 2, 1)
+VERSION = (0, 2, 2)
 __all__ = ['NV', 'model_fields_map']
 __title__ = 'DjangoNestedValues'
 __version__ = '.'.join(map(str, VERSION if VERSION[-1] else VERSION[:2]))
