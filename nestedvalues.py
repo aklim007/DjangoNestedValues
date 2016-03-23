@@ -4,7 +4,7 @@ from itertools import count
 
 from django.db.models.query import QuerySet, BaseIterable
 
-VERSION = (0, 2, 2)
+VERSION = (0, 2, 3)
 __all__ = ['NV', 'model_fields_map']
 __title__ = 'DjangoNestedValues'
 __version__ = '.'.join(map(str, VERSION if VERSION[-1] else VERSION[:2]))
@@ -20,11 +20,11 @@ def model_fields_map(model, fields=None, exclude=None, prefix='', prefixm='', at
     и с каким именем оно должно войти в результат.
     Обрабатываются только обычные поля, m2m и generic сюда не войдут.
     ARGUMENTS:
-        :param model: модель или инстанс модели на основе которой будет формироваться список полей
-        :param None | collections.Container fields: список полей которые будут забраны из модели
-        :param None | collections.Container exclude: список полей которые не будут забираться
-        :param str prefix: ORM путь по которому будут распологаться модель в запросе
-        :param str prefixm: префикс который будет добавлен к имени поля
+        :param model: модель или инстанс модели, на основе которой будет формироваться список полей
+        :param None | collections.Container fields: список полей, которые будут забраны из модели
+        :param None | collections.Container exclude: список полей, которые не будут забираться
+        :param str prefix: ORM путь, по которому будут распологаться модель в запросе
+        :param str prefixm: префикс, который будет добавлен к имени поля
         :param bool attname: использовать имя name (model) или attname(model_id) эти поля отличаются для внешних ключей
         :param dict rename: словарь переименования полей
         :rtype: list[tuple[str]]
@@ -87,7 +87,7 @@ class NV(object):
     @property
     def values_list(self):
         """
-        Возвращает cписок полей (могут повторятся), таких каими их требуется скормить для values_list orm
+        Возвращает cписок полей (могут повторятся), таких какими их требуется скормить для values_list orm
         ARGUMENTS:
             :rtype: list[str]
         """
